@@ -1,0 +1,32 @@
+#################################################
+#	MACROS										#
+#################################################
+
+CCC=g++
+CCCFLAGS= -ansi -g -Wall -pedantic -O3 '-DCOMPLEX=std::complex<double>' 
+LDFLAGS= $(SPARSELIB_DIR)/lib/libsparse.a $(SPARSELIB_DIR)/lib/libspblas.a \
+					$(SPARSELIB_DIR)/lib/libmv.a -lm
+GSLFLAGS= -L/usr/lib -lgsl -lgslcblas
+
+############
+#IMPLICIT
+############
+
+SPARSELIB_LIB_DIR			= $(SPARSELIB_DIR)/lib
+SPARSELIB_INCLUDE_DIR		= $(SPARSELIB_DIR)/include
+SPARSELIB_MV_DIR			= $(SPARSELIB_DIR)/mv
+SPARSELIB_MV_INCLUDE_DIR	= $(SPARSELIB_MV_DIR)/include
+
+SPARSELIB_A             = $(SPARSELIB_LIB_DIR)/libsparse.a
+SPARSEBLAS_A            = $(SPARSELIB_LIB_DIR)/libspblas.a
+MV_LIB_A				= $(SPARSELIB_DIR)/lib/libmv.a
+
+
+INCLUDES =  -I$(SPARSELIB_INCLUDE_DIR) -I$(SPARSELIB_MV_INCLUDE_DIR) -I /usr/include
+
+
+EXENAME     = -o
+OBJ_EXT     = o
+LIB_EXT     = a
+EXE_EXT     =
+

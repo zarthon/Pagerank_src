@@ -1,0 +1,35 @@
+This a simple implementation of PageRank Algorithm in C++
+
+The program generates a random web and then computes the PageRank vector
+for that web.
+
+It has been developed using GSL Library for C++ and SparseLib++ available for C++.
+GSL provided Random pareto generation and SparseLib++ provided Sparse matrix implementations.
+
+Requirements
+=============
+SparseLib++ available at ( http://math.nist.gov/sparselib++ )
+GSL available at ( http://www.gnu.org/software/gsl )
+
+Runnig the Code
+=================
+1) Change the default SPARSELIB_DIR in Makefile to the path where you hav installed SparseLib++.
+
+2) run make command
+
+3) To execute the program issue following command
+
+		./page <number of pages> <distribution power> <Part no>
+
+Here distribution power determines the growth of the Pareto Random Generator
+
+And there are 3 Parts to the program,
+	Part no 1: Implements Basic PageRank algorithm without any adjustment
+	Part no 2: Implements algorithm with Stochastic adjustment
+	Part no 3: Implements the final PageRank algorithm
+
+Running Efficiency
+==================
+
+It computes the PageRank of 10 million in just over 80 seconds depending on the density of the web.
+I could not compute it for 25 million because I didnt have much memory for it.It needs a lot of memory and I am trying to solve that problem.
